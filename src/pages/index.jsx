@@ -1,4 +1,4 @@
-import React, { useState, useRef }  from "react"
+import React from "react"
 import Header from "../components/Header"
 import Inputbox from "../components/Inputbox"
 import Todolist from '../components/Todolist'
@@ -50,7 +50,7 @@ const UNDO_DONE = gql`
 `;
 
 export default function Home() {
-  const { data, loading, error } = useQuery(GET_TODOS)
+  const { data, loading } = useQuery(GET_TODOS)
   const [addTodo] = useMutation(ADD_TODO)
   const [updateTodoDone] = useMutation(UPDATE_TODO_DONE)
   const [deleteTodo] = useMutation(DELETE_TODO)
